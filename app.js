@@ -5,10 +5,13 @@ const express = require("express");
 const expressLayout = require("express-ejs-layouts");
 
 const connectDB = require("./server/config/db");
-connectDB();
+
 
 const app = express();
-const PORT = 3000 || process.env.PORT;
+const PORT = 3000 ;
+
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 
 app.use(expressLayout);
 app.set("layout", "./layouts/main");
@@ -18,6 +21,9 @@ app.use(express.static("public"));
 
 app.use("/", require("./server/routes/main"));
 
+
+connectDB().then(() => {
 app.listen(PORT, () => {
     console.log("App listening on port ", PORT);
+});
 });
