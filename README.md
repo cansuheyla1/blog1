@@ -1,0 +1,1 @@
+A simple blog application built with JavaScript using Node.js for the backend and MongoDB for database management. It includes full CRUD operations for creating, reading, updating, and deleting blog posts, along with pagination for managing and viewing older content efficiently. This project was developed to improve backend development skills and practice working with databases.
